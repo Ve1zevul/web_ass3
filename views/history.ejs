@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Request History</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<%- include('partials/navbar') %>
+
+<h1>API Request History</h1>
+
+<% if (history.length > 0) { %>
+    <table>
+        <thead>
+        <tr>
+            <th>API Name</th>
+            <th>Request Data</th>
+            <th>Response Data</th>
+            <th>Timestamp</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% history.forEach(entry => { %>
+            <tr>
+                <td><%= entry.apiName %></td>
+                <td><%= JSON.stringify(entry.requestData) %></td>
+                <td><%= JSON.stringify(entry.responseData) %></td>
+                <td><%= entry.timestamp.toLocaleString() %></td>
+            </tr>
+        <% }) %>
+        </tbody>
+    </table>
+<% } else { %>
+    <p>No history found.</p>
+<% } %>
+
+<%- include('partials/footer') %>
+</body>
+</html>

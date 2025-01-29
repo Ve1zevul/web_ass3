@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Data</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<%- include('partials/navbar') %>
+<div class="scrollable">
+    <h1>Pokémon Data</h1>
+
+    <form action="/api1" method="POST">
+        <input type="text" name="pokemonName" placeholder="Enter Pokémon name" required>
+        <button type="submit">Search</button>
+    </form>
+
+    <% if (error) { %>
+        <p style="color: red;"><%= error %></p>
+    <% } %>
+
+    <% if (pokemon) { %>
+        <div class="card">
+            <h2><%= pokemon.name %> (ID: <%= pokemon.id %>)</h2>
+            <img src="<%= pokemon.sprite %>" alt="<%= pokemon.name %>">
+            <p><strong>Height:</strong> <%= pokemon.height %> dm</p>
+            <p><strong>Weight:</strong> <%= pokemon.weight %> hg</p>
+            <p><strong>Types:</strong> <%= pokemon.types %></p>
+            <p><strong>Abilities:</strong> <%= pokemon.abilities %></p>
+        </div>
+    <% } %>
+</div>
+<%- include('partials/footer') %>
+</body>
+</html>

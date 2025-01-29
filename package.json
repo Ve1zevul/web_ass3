@@ -1,0 +1,26 @@
+{
+  "name": "web_ass3",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "private": true,
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.9",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.3",
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "mongoose": "^8.9.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  },
+  "description": ""
+}

@@ -1,0 +1,16 @@
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<nav class="navbar main-navbar">
+    <a href="/weather">Weather</a>
+    <a href="/api1">API 1</a>
+    <a href="/api2">API 2</a>
+    <a href="/history">API History</a>
+    <% if (user && user.isAdmin) { %>
+        <a href="/admin">Admin panel</a>
+    <% } %>
+    <% if (user) { %>
+        <a href="/logout">Logout</a>
+    <% } else { %>
+        <a href="/login">Login</a>
+    <% } %>
+
+</nav>
